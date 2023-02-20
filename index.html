@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/style.css">
+    <title>DrawJS</title>
+</head>
+<body>
+
+    <main class="container">
+        <input type="text" name="username" id="username" placeholder="username">
+        <section id="pallet">
+            <div id="pallet-items">
+                <input type="color" name="colorPicker" id="colorPicker">
+                <div class="slider-container">  
+                    <input type="range" id="slider" min="1" max="20" step="1" value="3" >
+                </div>
+               <div class="trash-container">
+                    <img src="./src/assets/clean.svg" alt="" onclick="clearCanvas()" style="cursor: pointer;">
+               </div>
+            </div>
+        </section>
+
+        <canvas id="canvas"></canvas>
+
+    </main>
+
+    <script src="./src/app.js" type="module" ></script>
+    <script>
+        const clearCanvas = () =>{
+            let canvas = document.getElementById('canvas');
+            let context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>
